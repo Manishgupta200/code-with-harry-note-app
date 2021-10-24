@@ -7,12 +7,7 @@ addBtn.addEventListener('click', function () {
     let addTxt = document.getElementById('addTxt');
     let addTitle = document.getElementById('addTitle');
     let notes = localStorage.getItem('notes');
-    if (notes === null) {
-        notesObj = [];
-    }
-    else {
-        notesObj = JSON.parse(notes);
-    }
+    notesObj = notes === null ? [] : JSON.parse(notes);
     let myObj = {
         notes: addTxt.value,
         title: addTitle.value
@@ -29,12 +24,7 @@ addBtn.addEventListener('click', function () {
 // function to display notes from local storage
 function showNotes() {
     let notes = localStorage.getItem('notes');
-    if (notes === null) {
-        notesObj = [];
-    }
-    else {
-        notesObj = JSON.parse(notes);
-    }
+    notesObj = notes === null ? [] : JSON.parse(notes);
     let html = '';
     notesObj.forEach(function (element, index) {
         html += `<div class="noteCard card row mx-3 my-3" style="width: 18rem;">
@@ -59,12 +49,7 @@ function showNotes() {
 // function to delete a note from display and local storage both
 function deleteNote(index) {
     let notes = localStorage.getItem('notes');
-    if (notes === null) {
-        notesObj = [];
-    }
-    else {
-        notesObj = JSON.parse(notes);
-    }
+    notesObj = notes === null ? [] : JSON.parse(notes);
     notesObj.splice(index, 1);
     localStorage.setItem('notes', JSON.stringify(notesObj));
     console.log("note deleted ", index);
