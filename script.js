@@ -7,7 +7,7 @@ addBtn.addEventListener('click', function () {
     let addTxt = document.getElementById('addTxt');
     let addTitle = document.getElementById('addTitle');
     let notes = localStorage.getItem('notes');
-    if (notes == null) {
+    if (notes === null) {
         notesObj = [];
     }
     else {
@@ -29,7 +29,7 @@ addBtn.addEventListener('click', function () {
 // function to display notes from local storage
 function showNotes() {
     let notes = localStorage.getItem('notes');
-    if (notes == null) {
+    if (notes === null) {
         notesObj = [];
     }
     else {
@@ -59,7 +59,7 @@ function showNotes() {
 // function to delete a note from display and local storage both
 function deleteNote(index) {
     let notes = localStorage.getItem('notes');
-    if (notes == null) {
+    if (notes === null) {
         notesObj = [];
     }
     else {
